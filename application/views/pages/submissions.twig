@@ -174,9 +174,15 @@
 			</td>
 			{% endif %}
 			{% if user.level >= 2 %}
-				<td>
-					<div class="shj_rejudge pointer"><i class="fa fa-refresh fa-lg color10"></i></div>
-				</td>
+				{% if submission.status == 'Uploaded' %}
+					<td>
+						<div class="shj_validate_upload pointer"><i class="fa fa-check fa-lg color10"></i></div>
+					</td>
+				{% else %}
+					<td>
+						<div class="shj_rejudge pointer"><i class="fa fa-refresh fa-lg color10"></i></div>
+					</td>
+				{% endif %}
 			{% endif %}
 		</tr>
 	{% endfor %}
